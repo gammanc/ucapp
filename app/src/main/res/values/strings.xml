@@ -1,8 +1,29 @@
 <resources>
     <string name="app_name">UCA</string>
 
+<<<<<<< HEAD
     <!--Login-->
     <string name="log_in">Log in</string>
     <string name="user">User</string>
     <string name="password">Password</string>
+=======
+    <string name="menu">Menu</string>
+    <string name="home">Principal</string>
+    <string name="grades">Notas</string>
+    <string name="schedule">Horario</string>
+    <string name="expedient">Expediente</string>
+    <string name="solvency">Solvencias</string>
+    <string name="calendar">Calendario</string>
+    <string name="settings">Configuración</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+>>>>>>> c803026b747cefd1da644d7d0d9ef9568923e8c8
 </resources>
