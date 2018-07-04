@@ -72,8 +72,8 @@ public class ExpedientFragment extends Fragment {
         subjectsExpedient.add(note10);
     }*/
 
-    @Override
+   /* @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_settings, menu);
-    }
+    }*/
 }
