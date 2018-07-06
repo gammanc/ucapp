@@ -22,7 +22,7 @@ public class ExpedientFragment extends Fragment {
     SubjectExpedientAdapter subjectExpedientAdapter;
     RecyclerView subjectExpedientListView;
     LinearLayoutManager lManager;
-    //List<SubjectExpedient> subjectsExpedient;
+    List<SubjectExpedient> subjectsExpedient;
 
     public ExpedientFragment() {}
 
@@ -32,22 +32,21 @@ public class ExpedientFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_expedient, container, false);
 
-       /**subjectExpedientListView = (RecyclerView) view.findViewById(R.id.subject_expedient_list);
-       subjectExpedientListView.setHasFixedSize(true);
-
-       lManager = new LinearLayoutManager(container.getContext());
-         subjectExpedientListView.setLayoutManager(lManager);**/
+        subjectExpedientListView = view.findViewById(R.id.subject_expedient_list);
+        subjectExpedientListView.setHasFixedSize(true);
+        lManager = new LinearLayoutManager(container.getContext());
+        subjectExpedientListView.setLayoutManager(lManager);
 
         //aqui tendria que llamarse la tabla que contiene las notes
-       // setList();
+        setList();
 
-//        subjectExpedientAdapter = new SubjectExpedientAdapter(getContext(),subjectsExpedient);
-//        subjectExpedientListView.setAdapter(subjectExpedientAdapter); //se le asigna al recycler lo que procesa el adapter de la informacion
-
+        subjectExpedientAdapter = new SubjectExpedientAdapter(getContext(),subjectsExpedient);
+        subjectExpedientListView.setAdapter(subjectExpedientAdapter); //se le asigna al recycler lo que procesa el adapter de la informacion
+        subjectExpedientListView.setNestedScrollingEnabled(false);
         return view;
     }
 
-   /* private void setList() {
+    private void setList() {
         SubjectExpedient note1 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
         SubjectExpedient note2 = new SubjectExpedient("A","Analisis de Sistemas","N/A");
         SubjectExpedient note3 = new SubjectExpedient("R","Redes de Computadoras","N/A");
@@ -70,7 +69,14 @@ public class ExpedientFragment extends Fragment {
         subjectsExpedient.add(note8);
         subjectsExpedient.add(note9);
         subjectsExpedient.add(note10);
-    }*/
+        subjectsExpedient.add(note10);
+        subjectsExpedient.add(note10);
+        subjectsExpedient.add(note10);
+        subjectsExpedient.add(note10);
+        subjectsExpedient.add(note10);
+        subjectsExpedient.add(note10);
+        subjectsExpedient.add(note10);
+    }
 
    /* @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
