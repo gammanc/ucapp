@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/item_padding_x">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ProgressBar
+                    android:id="@+id/progress_career_level"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="75"
+                    android:layout_centerHorizontal="true"
+                    android:progressDrawable="@drawable/circular_progress"
+                    android:secondaryProgress="100" />
+                <TextView
+                    android:id="@+id/progress_career_level_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="4"/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:text="Nivel de carrera"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ProgressBar
+                    android:id="@+id/progress_subjects"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="75"
+                    android:layout_centerHorizontal="true"
+                    android:progressDrawable="@drawable/circular_progress"
+                    android:secondaryProgress="100" />
+                <TextView
+                    android:id="@+id/progress_subjects_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="16/42"/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:text="Materias Aprobadas"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ProgressBar
+                    android:id="@+id/progress_career"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="75"
+                    android:layout_centerHorizontal="true"
+                    android:progressDrawable="@drawable/circular_progress"
+                    android:secondaryProgress="100" />
+                <TextView
+                    android:id="@+id/progress_career_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="36%"/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:text="Avance de carrera"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ProgressBar
+                    android:id="@+id/progress_hours"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="75"
+                    android:layout_centerHorizontal="true"
+                    android:progressDrawable="@drawable/circular_progress"
+                    android:secondaryProgress="100" />
+                <TextView
+                    android:id="@+id/progress_hours_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="600/600"/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:text="Horas sociales"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/item_sl_padding_y"
+        android:background="#dedfe0" />
+</LinearLayout>

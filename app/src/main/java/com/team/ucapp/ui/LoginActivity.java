@@ -1,4 +1,4 @@
-package com.team.ucapp.activities;
+package com.team.ucapp.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

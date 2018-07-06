@@ -7,13 +7,12 @@
     android:background="#fff"
     android:gravity="bottom"
     android:orientation="vertical"
-
     android:theme="@style/ThemeOverlay.AppCompat">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/img_background"
             android:contentDescription="Drawer background"
+            android:src="@drawable/img_background1"
             android:scaleType="centerCrop"/>
 
         <RelativeLayout

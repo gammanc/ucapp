@@ -32,11 +32,11 @@ public class ExpedientFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_expedient, container, false);
 
-       subjectExpedientListView = (RecyclerView) view.findViewById(R.id.subject_expedient_list);
+       /**subjectExpedientListView = (RecyclerView) view.findViewById(R.id.subject_expedient_list);
        subjectExpedientListView.setHasFixedSize(true);
 
        lManager = new LinearLayoutManager(container.getContext());
-         subjectExpedientListView.setLayoutManager(lManager);
+         subjectExpedientListView.setLayoutManager(lManager);**/
 
         //aqui tendria que llamarse la tabla que contiene las notes
        // setList();

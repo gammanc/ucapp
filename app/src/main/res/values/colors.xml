@@ -5,5 +5,6 @@
     <color name="colorPrimaryDark">#073559</color>
     <color name="colorAccent">#FF9100</color>
     <color name="colorAppBar">#f5f5f5</color>
+    <color name="colorLightBlue">#00b0ff</color>
 
 </resources>

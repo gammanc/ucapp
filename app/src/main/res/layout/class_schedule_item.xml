@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:paddingTop="@dimen/item_padding_y"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F6F8FC">
-
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="104dp"
+            android:id="@+id/initial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/item_padding_x"
+            android:paddingRight="@dimen/item_padding_x"
+            android:layout_centerVertical="true"
             android:orientation="vertical"
-            android:layout_marginLeft="16dp"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/txt_subject_letter"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/circle_shape"
                 android:backgroundTint="@color/colorAccent"
                 android:gravity="center"
                 android:text="S"
                 android:textColor="@android:color/white"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display2"/>
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="104dp"
-            android:layout_weight="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/initial"
+            android:layout_toEndOf="@id/initial"
             android:orientation="vertical"
             android:gravity="center">
 
@@ -42,7 +42,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="@dimen/item_title"
+                android:textStyle="bold"
                 android:text="Subject"/>
 
             <TextView
@@ -50,24 +51,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/item_caption"
                 android:text="Teacher"/>
             <TextView
                 android:id="@+id/txt_place_and_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/item_caption"
                 android:text="Place - Hour"/>
 
         </LinearLayout>
 
-    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@android:color/white"
-        android:layout_marginHorizontal="24dp"/>
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="@dimen/item_padding_y"
+        android:background="@android:color/white"/>
 
-</LinearLayout>
+</RelativeLayout>
