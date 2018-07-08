@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.team.ucapp.R;
 import com.team.ucapp.ui.expedient.ExpedientFragment;
+import com.team.ucapp.ui.grades.GradesFragment;
 import com.team.ucapp.ui.home.HomeFragment;
 
 /**
@@ -123,6 +124,8 @@ public class MainActivity extends AppCompatActivity
                 tag = "option";
                 break;
             case R.id.item_grades:
+                selectedFragment = new GradesFragment();
+                tag = "option";
                 break;
         }
         if (selectedFragment!=null){
@@ -183,4 +186,8 @@ public class MainActivity extends AppCompatActivity
             finish();
         }
     }
+
+   /* public void setTitle(int resource){
+        getSupportActionBar().setTitle(getResources().getString(resource));
+    }*/
 }
