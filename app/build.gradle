@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.team.ucapp"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -21,6 +21,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    productFlavors {
+    }
 }
 
 dependencies {
@@ -35,6 +37,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
     def lifecycle_version = "1.1.1"
+    implementation 'br.com.simplepass:loading-button-android:1.7.2'
     implementation "android.arch.lifecycle:runtime:$lifecycle_version"
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
     annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
