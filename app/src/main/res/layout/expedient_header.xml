@@ -36,12 +36,23 @@
             app:srcCompat="@drawable/ic_arrow"
             android:tint="#616161"/>
         <View
-            android:layout_alignParentBottom="true"
+            android:id="@+id/separator1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
             android:background="#dedfe0" />
     </RelativeLayout>
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Materias cursadas"
+        android:paddingLeft="@dimen/item_padding_x"
+        android:paddingRight="@dimen/item_padding_x"
+        android:layout_marginTop="@dimen/item_sl_padding_y"
+        android:layout_marginBottom="@dimen/item_sl_padding_y"
+        android:textStyle="bold"/>
     <!--<Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

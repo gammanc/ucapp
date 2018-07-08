@@ -20,7 +20,6 @@ public class SubjectExpedientAdapter extends
     private final int TYPE_HEADER = 0;
     private final int TYPE_ITEM = 1;
 
-    //TODO: añadir com header la parte superior del fragment
 
     @NonNull
     @Override
@@ -43,16 +42,16 @@ public class SubjectExpedientAdapter extends
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if(!(holder instanceof HeaderViewHolder)){
             SubjectExpedientViewHolder holderA = (SubjectExpedientViewHolder) holder;
-            SubjectExpedient subjectExpedient = subjectsExpedientDetail.get(position);
+            SubjectExpedient subjectExpedient = subjectsExpedientDetail.get(position-1);
             holderA.subjectLetter.setText(subjectExpedient.getSubjectLetter());
-            holderA.subject.setText(subjectsExpedientDetail.get(position).getSubject());
-            holderA.grade.setText(subjectsExpedientDetail.get(position).getGrade());
+            holderA.subject.setText(subjectExpedient.getSubject());
+            holderA.grade.setText(subjectExpedient.getGrade());
         }
     }
 
     @Override
     public int getItemCount() {
-        return subjectsExpedientDetail.size(); //cambiar despues por condicion para aver si esta vacio
+        return subjectsExpedientDetail.size()+1; //cambiar despues por condicion para aver si esta vacio
     }
 
     @Override

@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
@@ -12,9 +12,11 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="104dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/colorPrimaryDark"
+            android:paddingTop="@dimen/item_sl_padding_y"
+            android:paddingBottom="@dimen/item_sl_padding_y"
             android:gravity="center">
             <TextView
                 android:id="@+id/txt_day"
@@ -39,14 +41,14 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="104dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_weight="3"
             android:orientation="vertical"
             android:paddingTop="8dp">
 
             <TextView
-                android:id="@+id/txt_subject"
+                android:id="@+id/txt_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -69,7 +71,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="@dimen/item_padding_y"
+        android:layout_marginBottom="@dimen/item_padding_y"
         android:background="#dedfe0" />
 
 </LinearLayout>
