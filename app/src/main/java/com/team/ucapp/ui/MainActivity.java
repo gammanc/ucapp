@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity
                 else if(content.equals("expedient") &&
                         fragmentManager.findFragmentByTag("expedient")!=null)
                     bottomnavigationView.setSelectedItemId(R.id.item_expedient);
+                else if(content.equals("grades") &&
+                        fragmentManager.findFragmentByTag("grades")!=null)
+                    bottomnavigationView.setSelectedItemId(R.id.item_grades);
 
             }
         }
@@ -82,6 +85,8 @@ public class MainActivity extends AppCompatActivity
             outState.putString("content","home");
         else if(contentFragment instanceof ExpedientFragment)
             outState.putString("content","expedient");
+        else if(contentFragment instanceof GradesFragment)
+            outState.putString("content","grades");
         super.onSaveInstanceState(outState);
     }
 

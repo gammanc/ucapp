@@ -36,27 +36,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HorizontalView
     @NonNull
     @Override
     public HorizontalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        /*LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View v;
-        RecyclerView.ViewHolder holder;
-        switch (viewType){
-            case TYPE_NEWS:
-                v = layoutInflater.inflate(R.layout.horizontalrecycler, parent, false);
-                holder = new HorizontalViewHolder(v);
-                break;
-            case TYPE_SCHEDULE:
-                v = layoutInflater.inflate(R.layout.verticalrecycler,parent,false);
-                holder = new VerticalViewHolder(v);
-                break;
-            case TYPE_EVENTS:
-                v = layoutInflater.inflate(R.layout.verticalrecycler,parent,false);
-                holder = new VerticalViewHolder(v);
-                break;
-             default:
-                 v = layoutInflater.inflate(R.layout.verticalrecycler,parent,false);
-                 holder = new VerticalViewHolder(v);
-                 break;
-        }*/
         Log.d(TAG, "onCreateViewHolder: Setting viewholder");
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.horizontalrecycler, parent, false);
         return new HorizontalViewHolder(view);
@@ -69,15 +48,15 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HorizontalView
         holder.title.setText(section.getSectionLabel());
         holder.recyclerView.setNestedScrollingEnabled(false);
 
-        LinearLayoutManager manager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        holder.recyclerView.setLayoutManager(manager);
+        LinearLayoutManager manager;
+        if(section.getType() == 1)
+            manager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        else
+            manager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
 
-        Log.d(TAG, "onBindViewHolder: elemetos:"+section.getObjects().size());
+        holder.recyclerView.setLayoutManager(manager);
         ItemAdapter adapter = new ItemAdapter(context, section.getObjects());
         holder.recyclerView.setAdapter(adapter);
-        /*switch (holder.getItemViewType()){
-
-        }*/
     }
 
     @Override

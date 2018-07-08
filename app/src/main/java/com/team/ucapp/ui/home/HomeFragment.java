@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.team.ucapp.R;
+import com.team.ucapp.data.database.News;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class HomeFragment extends Fragment {
 
@@ -38,16 +40,25 @@ public class HomeFragment extends Fragment {
 
     private void populateRecycler(){
         ArrayList<Section> sections = new ArrayList<>();
-        for (int i = 1; i <= 2; i++) {
-            ArrayList<Object> sectionItems = new ArrayList<>();
-            for (int j = 1; j <= 10; j++) {
-                sectionItems.add(new EventDummy(
-                        "Event "+j,"dd/MONTH/aaaa",
-                        "Describing event",1));
-            }
-            sections.add(new Section("Section " + i, sectionItems));
+
+        ArrayList<Object> news = new ArrayList<>();
+        for (int j = 1; j <= 5; j++) {
+            news.add(new News(j+"",
+                    "New "+j,
+                    "This is a body",
+                    "no_image","This is a description",
+                    new Date()));
         }
-        Log.d(TAG, "populateRecycler: sections size "+sections.size());
+        sections.add(new Section(1,"Noticias", news));
+
+        ArrayList<Object> events = new ArrayList<>();
+        for (int j = 1; j <= 5; j++) {
+            events.add(new EventDummy(
+                    "Event "+j,"dd/MONTH/aaaa",
+                    "Describing event",1));
+        }
+        sections.add(new Section(2,"Próximas actividades", events));
+
         HomeAdapter adapter = new HomeAdapter(getContext(), sections);
         recyclerView.setAdapter(adapter);
         Log.d(TAG, "populateRecycler: Datos añadidos");

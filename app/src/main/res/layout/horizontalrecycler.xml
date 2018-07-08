@@ -2,7 +2,9 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/item_sl_padding_y"
+    android:layout_marginBottom="@dimen/item_sl_padding_y">
 
     <TextView
         android:id="@+id/section_title"
@@ -12,7 +14,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginRight="@dimen/item_padding_x"
         android:layout_marginLeft="@dimen/item_padding_x"
-        android:layout_alignBaseline="@id/section_button"
+        android:layout_alignBaseline="@+id/section_button"
         android:textSize="@dimen/item_title"
         android:text="Section 1" />
     <Button
@@ -23,10 +25,11 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="@dimen/item_padding_x"
         android:layout_marginLeft="@dimen/item_padding_x"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
         android:text="See more"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/section_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/section_button"/>
+        android:layout_below="@+id/section_button"/>
 </RelativeLayout>

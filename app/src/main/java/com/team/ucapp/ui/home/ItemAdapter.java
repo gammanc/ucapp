@@ -7,10 +7,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.team.ucapp.R;
+import com.team.ucapp.data.database.News;
+import com.team.ucapp.utils.GlideApp;
 
 import java.util.ArrayList;
 
@@ -38,9 +42,8 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         RecyclerView.ViewHolder holder;
         switch (viewType){
             case TYPE_NEWS:
-                //TODO: crear vista y viewholder para noticias
-                v = layoutInflater.inflate(R.layout.class_schedule_item,parent,false);
-                holder = new ScheduleViewHolder(v);
+                v = layoutInflater.inflate(R.layout.news_item,parent,false);
+                holder = new NewsViewHolder(v);
                 break;
             case TYPE_SCHEDULE:
                 v = layoutInflater.inflate(R.layout.class_schedule_item,parent,false);
@@ -62,6 +65,8 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public int getItemViewType(int position) {
         if(items.get(position) instanceof EventDummy)
             return TYPE_EVENTS;
+        if(items.get(position) instanceof News)
+            return TYPE_NEWS;
         //TODO: añadir y crear los otros tipos
         return -1;
     }
@@ -72,6 +77,9 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             case TYPE_EVENTS:
                 eventView((EventDummy) items.get(position), (EventViewHolder) holder);
                 break;
+            case TYPE_NEWS:
+                newsView((News) items.get(position), (NewsViewHolder) holder);
+                break;
         }
     }
 
@@ -80,6 +88,40 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         holder.txtDay.setText(event.getDate().substring(0,1));
         holder.txtMonth.setText(event.getDate().substring(3,8));
         holder.txtDescription.setText(event.getDescription());
+    }
+
+    private void newsView(News newItem, NewsViewHolder holder){
+        if(newItem.getTitle()!=null)
+            holder.txtTitle.setText(newItem.getTitle().trim());
+        else
+            holder.txtTitle.setText(context.getResources().getString(R.string.no_title_available));
+
+
+        if(newItem.getDescription()!=null)
+            holder.txtSubtitle.setText(newItem.getDescription().trim());
+        else
+            holder.txtSubtitle.setText(context.getResources().getString(R.string.no_description_available));
+
+        if(newItem.getCoverImage() != null){
+            GlideApp.with(context)
+                    .load(newItem.getCoverImage())
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .placeholder(R.drawable.no_image)
+                    .fallback(R.drawable.no_image)
+                    .error(R.drawable.no_image)
+                    .into(holder.imgPicture);
+        } else
+            holder.imgPicture.setImageResource(R.drawable.no_image);
+
+        /*if(newItem.isFavorite()){
+            holder.btnFav.setImageResource(R.drawable.ic_favorites);
+            holder.btnFav.setTag("y");
+        } else {
+            holder.btnFav.setImageResource(R.drawable.ic_favorite_border);
+            holder.btnFav.setTag("n");
+        }*/
+
+        //holder.btnFav.setOnClickListener(v-> mClickHandler.onNewsChecked(holder.btnFav, newItem.getId()));
     }
 
     @Override
@@ -113,6 +155,27 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             txtMonth = itemView.findViewById(R.id.txt_month);
             txtTitle = itemView.findViewById(R.id.txt_title);
             txtDescription = itemView.findViewById(R.id.txt_description);
+        }
+    }
+
+    class NewsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        LinearLayout card;
+        TextView txtTitle, txtSubtitle;
+        ImageView imgPicture;//, btnFav;
+
+        public NewsViewHolder(View itemView) {
+            super(itemView);
+            card = itemView.findViewById(R.id.news_view);
+            txtTitle = itemView.findViewById(R.id.txt_title);
+            txtSubtitle = itemView.findViewById(R.id.txt_subtitle);
+            imgPicture = itemView.findViewById(R.id.img_cover);
+            //btnFav = itemView.findViewById(R.id.btn_favorite);
+            card.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            //mClickHandler.onNewsClick(newsArray.get(getAdapterPosition()));
         }
     }
 }
