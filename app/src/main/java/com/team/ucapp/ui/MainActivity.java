@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.item_grades:
                 selectedFragment = new GradesFragment();
-                tag = "option";
+                tag = "grades";
                 break;
         }
         if (selectedFragment!=null){
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity
         if (fragmentManager.getBackStackEntryCount() > 0) {
             super.onBackPressed();
             while (fragmentManager.popBackStackImmediate()); //limpiando el backstack
-            bottomnavigationView.getMenu().getItem(0).setChecked(true);
+            bottomnavigationView.setSelectedItemId(R.id.item_home);
         }
         // Si ya no hay contenido, o la pantalla inicio está activa, se cierra la aplicación
         else if (contentFragment instanceof HomeFragment ||
