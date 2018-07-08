@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/subject_grade_item"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,7 +12,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="104dp"
+            android:layout_height="88dp"
             android:orientation="vertical"
             android:gravity="center">
 
@@ -32,7 +32,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="104dp"
+            android:layout_height="88dp"
             android:layout_weight="2"
             android:orientation="vertical"
             android:gravity="center">
@@ -47,7 +47,7 @@
                 android:text="Subject"/>
 
         </LinearLayout>
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="0dp"
             android:layout_height="104dp"
             android:layout_weight="1"
@@ -58,12 +58,37 @@
             <TextView
                 android:id="@+id/txt_grade"
                 android:layout_width="72dp"
-                android:layout_height="40dp"
+                android:layout_height="32dp"
                 android:gravity="center"
                 android:textColor="@android:color/white"
                 android:background="@drawable/rectangular_shape"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="5.5/6"/>
+
+        </LinearLayout>-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_grade"
+                    android:layout_width="64dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/rectangular_shape"
+                    android:gravity="center"
+                    android:text="N/A"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    tools:layout_marginRight="16dp" />
+            </RelativeLayout>
 
         </LinearLayout>
 
