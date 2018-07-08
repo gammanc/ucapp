@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/item_padding_x"
+    android:paddingRight="@dimen/item_padding_x"
+    android:layout_marginTop="@dimen/item_sl_padding_y"
+    android:layout_marginBottom="@dimen/item_sl_padding_y"
+    android:orientation="vertical">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/inner_recycler_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

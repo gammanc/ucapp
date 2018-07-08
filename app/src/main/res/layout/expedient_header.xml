@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/nav_header_main" />
+
+    <include layout="@layout/expedient_statistics"/>
+
+    <RelativeLayout
+        android:id="@+id/btn_solvency"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:focusable="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_sl_padding_y"
+            android:layout_marginBottom="@dimen/item_sl_padding_y"
+            android:paddingLeft="@dimen/item_padding_x"
+            android:paddingRight="@dimen/item_padding_x"
+            android:text="Ver estado de solvencia"/>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/item_padding_x"
+            android:layout_marginEnd="@dimen/item_padding_x"
+            app:srcCompat="@drawable/ic_arrow"
+            android:tint="#616161"/>
+        <View
+            android:id="@+id/separator1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#dedfe0" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Materias cursadas"
+        android:paddingLeft="@dimen/item_padding_x"
+        android:paddingRight="@dimen/item_padding_x"
+        android:layout_marginTop="@dimen/item_sl_padding_y"
+        android:layout_marginBottom="@dimen/item_sl_padding_y"
+        android:textStyle="bold"/>
+    <!--<Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown" />-->
+</LinearLayout>
