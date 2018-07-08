@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -13,25 +15,31 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.team.ucapp.R;
 
 public class SubjectGradesDetailActivity extends AppCompatActivity {
 
+    String subject;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home);
+        setContentView(R.layout.activity_subject_grades_detail);
 
         Bundle bundle = getIntent().getExtras();
-        String subject = bundle.getString("KEY");
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+        subject = bundle.getString("SUBJECT");
+        Log.d("SubjectDEtail", "se obtuvo string:" + subject);
+
+        EvaluationListFragment frag = new EvaluationListFragment();
+        frag.setArguments(bundle);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.main_content, frag);
+        //fragmentTransaction.addToBackStack("option");
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -53,7 +61,8 @@ public class SubjectGradesDetailActivity extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        setTitle("Funciona");
+        setTitle(subject);
         super.onResume();
     }
+
 }
