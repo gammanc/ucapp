@@ -60,7 +60,7 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.GradesAdap
 
     @Override
     public int getItemCount() {
-        return  subjectsExpedientDetail == null ? 0 : subjectsExpedientDetail.size(); //cambiar despues por condicion para aver si esta vacio
+        return  subjectsExpedientDetail == null ? 0 : subjectsExpedientDetail.size();
     }
 
     public class GradesAdapterViewHolder extends RecyclerView.ViewHolder{

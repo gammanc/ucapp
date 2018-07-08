@@ -142,10 +142,8 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
     public void onSubjectSelected(String subject) {
         Log.d("GradesFragment", "Subject" + subject);
         Bundle bundle = new Bundle(); //procesa la info que se enviara a traves del intent
-        bundle.putString("KEY", subject);
-
         Intent newIntent = new Intent(getActivity().getApplicationContext(), SubjectGradesDetailActivity.class);
-        newIntent.setAction(Intent.ACTION_SEND);
+        bundle.putString("SUBJECT", subject);
         newIntent.putExtras(bundle);
         startActivity(newIntent);
 
