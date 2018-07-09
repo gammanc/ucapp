@@ -2,6 +2,7 @@ package com.team.ucapp.ui.grades;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.team.ucapp.R;
 import com.team.ucapp.ui.expedient.SubjectExpedient;
@@ -30,6 +33,8 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
     LinearLayoutManager lManager;
     List<SubjectExpedient> gradesList;
     Spinner semesterSpinner;
+    LinearLayout header;
+    TextView txtSubject,txtGrade;
 
 
     public GradesFragment() {
@@ -47,6 +52,10 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
         semesterSpinner.setAdapter(semesterAdapter);
         semesterSpinner.setOnItemSelectedListener(this);
 
+        header = (LinearLayout) view.findViewById(R.id.total_grade_header);
+        txtSubject = view.findViewById(R.id.txt_subject);
+        txtGrade = view.findViewById(R.id.txt_grade);
+
         gradesListView = (RecyclerView) view.findViewById(R.id.subject_grades_list);
          gradesListView.setHasFixedSize(true);
 
@@ -54,7 +63,7 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
         //aqui tendria que llamarse la tabla que contiene las notes
         setList();
 
-        gradesAdapter = new GradesAdapter(this,gradesList);
+        gradesAdapter = new GradesAdapter(this,getResources(),gradesList);
         Log.d("GradesFragment", "Creo adapter ");
         gradesListView.setAdapter(gradesAdapter); //se le asigna al recycler lo que procesa el adapter de la informacion
         lManager = new LinearLayoutManager(container.getContext());
@@ -65,6 +74,7 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+         //header.setVisibility(View.VISIBLE);
         Log.d("GradesFragment", "onItemSelected: "+i);
         //Object option = adapterView.getItemAtPosition(i);
         if(i == 2)  {Log.d("GradesFragment", "selecciono 2 ");
@@ -77,7 +87,6 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 
    private void setList() {
@@ -139,14 +148,33 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
     }
 
     @Override
-    public void onSubjectSelected(String subject) {
-        Log.d("GradesFragment", "Subject" + subject);
-        Bundle bundle = new Bundle(); //procesa la info que se enviara a traves del intent
-        Intent newIntent = new Intent(getActivity().getApplicationContext(), SubjectGradesDetailActivity.class);
-        bundle.putString("SUBJECT", subject);
-        newIntent.putExtras(bundle);
-        startActivity(newIntent);
+    public void onSubjectSelected(String subject, int position) {
 
+        Bundle bundle = new Bundle(); //procesa la info que se enviara a traves del intent
+        bundle.putString("SUBJECT", subject + "-" +  gradesList.get(position).getGrade());
+
+        //header.setVisibility(View.VISIBLE);
+
+        if (getResources().getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE)) {
+
+            txtSubject.setText(subject);
+            txtGrade.setText(gradesList.get(position).getGrade());
+
+            EvaluationListFragment frag = new EvaluationListFragment();
+            frag.setArguments(bundle);
+
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            fragmentTransaction.replace(R.id.detail_content, frag);
+            //fragmentTransaction.addToBackStack("option");
+            fragmentTransaction.commit();
+        }else {
+            Log.d("GradesFragment", "Subject" + subject);
+            Intent newIntent = new Intent(getActivity().getApplicationContext(), SubjectGradesDetailActivity.class);
+            newIntent.putExtras(bundle);
+            startActivity(newIntent);
+        }
         /*SubjectGradesDetailActivity frag = new SubjectGradesDetailActivity();
         frag.setArguments(bundle);
 

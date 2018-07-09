@@ -23,6 +23,9 @@
     <string name="cover_image">Cover Image</string>
     <string name="no_title_available">No title available</string>
     <string name="no_description_available">No description available</string>
+    <string name="total_grade">Total grade</string>
+    <string name="personal">Personal</string>
+    <string name="university">University</string>
 
     <!--Dropdown list-->
     <string-array name="semester_options_array">

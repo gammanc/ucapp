@@ -15,29 +15,44 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.team.ucapp.R;
 
 public class SubjectGradesDetailActivity extends AppCompatActivity {
 
-    String subject;
+    String gradesDetail, subject, grade;
+    LinearLayout header;
+    TextView txtGrade;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject_grades_detail);
 
-        Bundle bundle = getIntent().getExtras();
-        subject = bundle.getString("SUBJECT");
-        Log.d("SubjectDEtail", "se obtuvo string:" + subject);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        EvaluationListFragment frag = new EvaluationListFragment();
+        header = (LinearLayout) findViewById(R.id.total_grade_header);
+        txtGrade = findViewById(R.id.txt_grade);
+
+        Bundle bundle = getIntent().getExtras();
+        gradesDetail = bundle.getString("SUBJECT");
+        subject= gradesDetail.split("-")[0];
+        Log.d("SubjectDEtail", "se obtuvo string:" + subject);
+        grade= gradesDetail.split("-")[1];
+
+        txtGrade.setText(grade);
+
+       EvaluationListFragment frag = new EvaluationListFragment();
         frag.setArguments(bundle);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(R.id.main_content, frag);
+        fragmentTransaction.replace(R.id.detail_content, frag);
         //fragmentTransaction.addToBackStack("option");
         fragmentTransaction.commit();
     }

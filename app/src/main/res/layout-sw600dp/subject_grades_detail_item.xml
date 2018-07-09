@@ -13,35 +13,37 @@
             android:layout_width="0dp"
             android:layout_height="88dp"
             android:layout_weight="3"
+            android:gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingTop="@dimen/item_padding_y"
+            android:layout_marginLeft="@dimen/horizontal_text_margin"
             android:paddingBottom="@dimen/item_padding_y"
-            android:gravity="center">
+            android:paddingLeft="16dp"
+            android:paddingTop="@dimen/item_padding_y">
 
             <TextView
                 android:id="@+id/txt_evaluation_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:text="Subject"/>
+                android:text="Subject"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
             <TextView
                 android:id="@+id/txt_date_and_percentage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="8/05/18 - (15%)"/>
+                android:text="8/05/18 - (15%)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="88dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -52,9 +54,10 @@
                     android:layout_width="64dp"
                     android:layout_height="32dp"
                     android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
                     android:background="@drawable/rectangular_shape"
-                    android:gravity="center"
                     android:backgroundTint="#00e676"
+                    android:gravity="center"
                     android:text="N/A"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
