@@ -21,6 +21,7 @@ import com.team.ucapp.R;
 import com.team.ucapp.ui.expedient.ExpedientFragment;
 import com.team.ucapp.ui.grades.GradesFragment;
 import com.team.ucapp.ui.home.HomeFragment;
+import com.team.ucapp.utils.SharedPreference;
 
 /**
  * Activity Principal
@@ -47,8 +48,18 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        SharedPreference.init(getApplicationContext());
+        Log.d(TAG, "onCreate: Checking login");
+
+        /*Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
+
+        //TODO: implementar cuando esté listo el login
+        /*if(SharedPreference.checkLogin(getApplicationContext())){
+            finishAffinity();
+            //finish();
+            Log.d(TAG, "onCreate: No login");
+        }*/
         findViews();
 
         fragmentManager = getSupportFragmentManager();
@@ -192,7 +203,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-   /* public void setTitle(int resource){
+    public void setTitle(int resource){
         getSupportActionBar().setTitle(getResources().getString(resource));
-    }*/
+    }
 }

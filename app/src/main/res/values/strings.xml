@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">UCA</string>
     <!--Login-->
-    <string name="log_in">Log in</string>
+    <string name="log_in">Login</string>
     <string name="user">User</string>
     <string name="password">Password</string>
+    <string name="e_user_required">User is required</string>
+    <string name="e_pass_required">Password is required</string>
+    <string name="e_login_failed">Login operation failed. Please try again later</string>
+    <string name="logout">Logout</string>
+
     <string name="menu">Menu</string>
     <string name="home">Home</string>
     <string name="grades">Grades</string>
@@ -12,17 +17,12 @@
     <string name="solvency">Solvency</string>
     <string name="calendar">Calendar</string>
     <string name="settings">Settings</string>
-    <string name="logout">Log out</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="cover_image">Imagen de portada</string>
-    <string name="no_title_available">Sin título</string>
-    <string name="no_description_available">Sin descripción</string>
+    <string name="cover_image">Cover Image</string>
+    <string name="no_title_available">No title available</string>
+    <string name="no_description_available">No description available</string>
 
     <!--Dropdown list-->
     <string-array name="semester_options_array">

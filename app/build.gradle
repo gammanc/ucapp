@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.team.ucapp"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -44,6 +44,8 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.7.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+
+    implementation 'br.com.simplepass:loading-button-android:1.7.2'
 
     implementation 'com.github.ittianyu:BottomNavigationViewEx:1.2.4'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'

@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.team.ucapp.ui.LoginActivity;
+
 /*
  * Call once in an activity
  * SharedPreference.init(getApplicationContext());
@@ -80,9 +82,7 @@ public class SharedPreference {
 
     public static boolean checkLogin(Context context){
         if(!isLoggedIn()){
-            // TODO: Actualizar este metodo cuando se tenga LoginActivity
-            //Intent i = new Intent(mContext, LoginActivity.class);
-            Intent i = new Intent();
+            Intent i = new Intent(context, LoginActivity.class);
             //Close all the activities
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
