@@ -32,16 +32,16 @@
                 android:textStyle="normal" />
 
         </LinearLayout>
-        <TextView
+        <android.support.v7.widget.AppCompatTextView
             android:id="@+id/txt_grade"
             android:layout_width="88dp"
             android:layout_height="88dp"
             android:layout_gravity="center"
             android:background="@drawable/circle_shape"
-            android:backgroundTint="#fff"
+            app:backgroundTint="#fff"
             android:gravity="center"
             android:text="7.8"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000"/>
 
         <TextView

@@ -50,12 +50,11 @@ public class MainActivity extends AppCompatActivity
         /*Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);*/
 
-        //TODO: implementar cuando esté listo el login
-        /*if(SharedPreference.checkLogin(getApplicationContext())){
+        if(SharedPreference.checkLogin(getApplicationContext())){
             finishAffinity();
             //finish();
             Log.d(TAG, "onCreate: No login");
-        }*/
+        }
         findViews();
 
         fragmentManager = getSupportFragmentManager();
@@ -74,7 +73,9 @@ public class MainActivity extends AppCompatActivity
                 else if(content.equals("grades") &&
                         fragmentManager.findFragmentByTag("grades")!=null)
                     bottomnavigationView.setSelectedItemId(R.id.item_grades);
-
+                else if(content.equals("calendar") &&
+                        fragmentManager.findFragmentByTag("calendar")!=null)
+                    bottomnavigationView.setSelectedItemId(R.id.item_calendar);
             }
         }
         // Si el bundle está vacío, es porque se está inciando la aplicación
@@ -94,6 +95,8 @@ public class MainActivity extends AppCompatActivity
             outState.putString("content","expedient");
         else if(contentFragment instanceof GradesFragment)
             outState.putString("content","grades");
+        else if(contentFragment instanceof CalendarFragment)
+            outState.putString("content","calendar");
         super.onSaveInstanceState(outState);
     }
 
@@ -106,6 +109,18 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_settings, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.item_logout) {
+            SharedPreference.logOutUser(this);
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void findViews(){
@@ -128,18 +143,22 @@ public class MainActivity extends AppCompatActivity
                 selectedFragment = new HomeFragment();
                 tag = "home";
                 while (fragmentManager.popBackStackImmediate()); //clear the backstack
+                setTitle(R.string.app_name);
                 break;
             case R.id.item_calendar:
                 selectedFragment = new CalendarFragment();
                 tag = "calendar";
+                setTitle(R.string.calendar);
                 break;
             case R.id.item_expedient:
                 selectedFragment = new ExpedientFragment();
-                tag = "option";
+                tag = "expedient";
+                setTitle(R.string.expedient);
                 break;
             case R.id.item_grades:
                 selectedFragment = new GradesFragment();
                 tag = "grades";
+                setTitle(R.string.grades);
                 break;
         }
         if (selectedFragment!=null){
@@ -201,7 +220,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-   /* public void setTitle(int resource){
+    public void setTitle(int resource){
         getSupportActionBar().setTitle(getResources().getString(resource));
-    }*/
+    }
 }

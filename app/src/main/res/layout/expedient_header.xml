@@ -24,7 +24,7 @@
             android:layout_marginBottom="@dimen/item_sl_padding_y"
             android:paddingLeft="@dimen/item_padding_x"
             android:paddingRight="@dimen/item_padding_x"
-            android:text="Ver estado de solvencia"/>
+            android:text="@string/solvency_status"/>
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"

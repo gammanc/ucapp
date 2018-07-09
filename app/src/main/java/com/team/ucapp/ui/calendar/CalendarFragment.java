@@ -26,12 +26,7 @@ public class CalendarFragment extends Fragment {
     private PersonalCalendarFragment personalCalendarFragment;
     private UniversityCalendarFragment universityCalendarFragment;
 
-    FragmentManager fm;
-
-
-    public CalendarFragment() {
-        // Required empty public constructor
-    }
+    public CalendarFragment() {}
 
     @Nullable
     @Override
@@ -50,7 +45,7 @@ public class CalendarFragment extends Fragment {
     public void prepareTabs(){
         main_tab = view.findViewById(R.id.tablayout);
         viewpager = view.findViewById(R.id.viewpager);
-        adapter = new CalendarViewPagerAdapter(getFragmentManager());
+        adapter = new CalendarViewPagerAdapter(getChildFragmentManager());
 
         personalCalendarFragment = new PersonalCalendarFragment();
         universityCalendarFragment = new UniversityCalendarFragment();

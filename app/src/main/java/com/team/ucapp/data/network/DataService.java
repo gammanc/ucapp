@@ -18,5 +18,5 @@ import retrofit2.http.Path;
 public interface DataService {
     @FormUrlEncoded
     @POST("/login")
-    Call<String> login(@Field("user") String user, @Field("password")String password);
+    Call<String> login(@Field("carnet") String user, @Field("password")String password);
 }

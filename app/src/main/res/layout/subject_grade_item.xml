@@ -1,100 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/subject_grade_item"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="88dp"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/txt_subject_letter"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/circle_shape"
-                android:backgroundTint="@color/colorAccent"
-                android:gravity="center"
-                android:text="S"
-                android:textColor="@android:color/white"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="88dp"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:gravity="center">
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txt_subject_letter"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/item_padding_y"
+            android:layout_marginBottom="@dimen/item_padding_y"
+            android:layout_marginLeft="@dimen/item_padding_x"
+            android:layout_marginRight="@dimen/item_padding_x"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_shape"
+            app:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:text="S"
+            android:textColor="@android:color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
             <TextView
                 android:id="@+id/txt_subject"
+                android:layout_toRightOf="@+id/txt_subject_letter"
+                android:layout_toEndOf="@+id/txt_subject_letter"
+                android:layout_marginTop="@dimen/item_sl_padding_y"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginHorizontal="8dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:text="Subject"/>
-
-        </LinearLayout>
-        <!--<LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="104dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:paddingRight="16dp">
 
             <TextView
                 android:id="@+id/txt_grade"
-                android:layout_width="72dp"
+                android:layout_width="64dp"
                 android:layout_height="32dp"
-                android:gravity="center"
-                android:textColor="@android:color/white"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/item_padding_y"
+                android:layout_marginBottom="@dimen/item_padding_y"
+                android:layout_marginLeft="@dimen/item_padding_x"
+                android:layout_marginRight="@dimen/item_padding_x"
                 android:background="@drawable/rectangular_shape"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:text="5.5/6"/>
-
-        </LinearLayout>-->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="88dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/txt_grade"
-                    android:layout_width="64dp"
-                    android:layout_height="32dp"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/rectangular_shape"
-                    android:gravity="center"
-                    android:text="N/A"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    tools:layout_marginRight="16dp" />
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+                android:gravity="center"
+                android:text="N/A"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
         android:background="#dedfe0" />
-</LinearLayout>
+</RelativeLayout>

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.team.ucapp.R;
@@ -25,10 +26,11 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.GradesAdap
     Resources resources;
 
     public interface GradesAdapterListener{
-        public void onSubjectSelected(String subject, int position);
+        void onSubjectSelected(String subject, int position);
     }
 
     private GradesAdapterListener mListener;
+
     @NonNull
     @Override
     public GradesAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -50,16 +52,10 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.GradesAdap
 
     @Override
     public void onBindViewHolder(@NonNull GradesAdapterViewHolder holder, int position) {
-        Log.d("CalendarAdapter", "bindviewholder");
         holder.subjectLetter.setText(subjectsExpedientDetail.get(position).getSubjectLetter());
         holder.subject.setText(subjectsExpedientDetail.get(position).getSubject());
         if ( !(resources.getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE))) holder.grade.setText(subjectsExpedientDetail.get(position).getGrade());
-        holder.subjectItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mListener.onSubjectSelected(subjectsExpedientDetail.get(position).getSubject(), position);
-            }
-        });
+        holder.subjectItem.setOnClickListener(view -> mListener.onSubjectSelected(subjectsExpedientDetail.get(position).getSubject(), position));
     }
 
     @Override
@@ -69,7 +65,7 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.GradesAdap
 
     public class GradesAdapterViewHolder extends RecyclerView.ViewHolder{
         TextView subjectLetter, subject,grade;
-        LinearLayout subjectItem;
+        RelativeLayout subjectItem;
         public GradesAdapterViewHolder(View itemView) {
             super(itemView);
             subjectItem = itemView.findViewById(R.id.subject_grade_item);

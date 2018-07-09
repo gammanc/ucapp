@@ -17,8 +17,8 @@ public class MessageDeserializer implements JsonDeserializer<String> {
         JsonObject logininfo = json.getAsJsonObject();
         if(logininfo != null){
             Log.d(TAG, "deserialize: login info correct");
-            if(logininfo.has("token"))
-                return "token:"+logininfo.get("token").getAsString();
+            if(logininfo.has("api_key"))
+                return "api_key:"+logininfo.get("api_key").getAsString();
             else
                 return "message:"+logininfo.get("message").getAsString();
 

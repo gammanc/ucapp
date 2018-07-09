@@ -34,13 +34,12 @@ public class PersonalCalendarFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_personal, container, false);
 
-        personalListView = (RecyclerView) v.findViewById(R.id.personal_calendar_list);
+        personalListView = v.findViewById(R.id.personal_calendar_list);
         personalListView.setHasFixedSize(true);
 
         setList();
 
         calendarAdapter = new CalendarAdapter(this, personalList);
-        Log.d("GradesFragment", "Creo adapter ");
         personalListView.setAdapter(calendarAdapter); //se le asigna al recycler lo que procesa el adapter de la informacion
         lManager = new LinearLayoutManager(container.getContext());
         personalListView.setLayoutManager(lManager);

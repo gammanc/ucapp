@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -27,7 +28,6 @@ import java.util.List;
 
 public class GradesFragment extends Fragment implements AdapterView.OnItemSelectedListener, GradesAdapter.GradesAdapterListener {
 
-    Activity activity;
     GradesAdapter gradesAdapter;
     RecyclerView gradesListView;
     LinearLayoutManager lManager;
@@ -37,34 +37,32 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
     TextView txtSubject,txtGrade;
 
 
-    public GradesFragment() {
-    }
+    public GradesFragment() { }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_grades, container, false);
-        semesterSpinner= (Spinner) view.findViewById(R.id.semester_options_spinner);
+
+        //Agregando opciones de ciclo
+        semesterSpinner = view.findViewById(R.id.semester_options_spinner);
         ArrayAdapter<CharSequence> semesterAdapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.semester_options_array, android.R.layout.simple_spinner_item);
-
         semesterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         semesterSpinner.setAdapter(semesterAdapter);
         semesterSpinner.setOnItemSelectedListener(this);
 
-        header = (LinearLayout) view.findViewById(R.id.total_grade_header);
+        header = view.findViewById(R.id.total_grade_header);
         txtSubject = view.findViewById(R.id.txt_subject);
         txtGrade = view.findViewById(R.id.txt_grade);
 
-        gradesListView = (RecyclerView) view.findViewById(R.id.subject_grades_list);
-         gradesListView.setHasFixedSize(true);
+        gradesListView = view.findViewById(R.id.subject_grades_list);
+        gradesListView.setHasFixedSize(true);
 
-
-        //aqui tendria que llamarse la tabla que contiene las notes
+        //Se colocan las materias cursadas
         setList();
 
         gradesAdapter = new GradesAdapter(this,getResources(),gradesList);
-        Log.d("GradesFragment", "Creo adapter ");
         gradesListView.setAdapter(gradesAdapter); //se le asigna al recycler lo que procesa el adapter de la informacion
         lManager = new LinearLayoutManager(container.getContext());
         gradesListView.setLayoutManager(lManager);
@@ -94,55 +92,31 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
         //SubjectExpedient note2 = new SubjectExpedient("Analisis de Sistemas","A","Primera Evaluación Parcial","19/04/18 - %15","N/A");
 
         SubjectExpedient note1 = new SubjectExpedient("R","Redes de Computadoras","N/A");
-        SubjectExpedient note2 = new SubjectExpedient("R","Redes de Computadoras","N/A");
-        SubjectExpedient note3 = new SubjectExpedient("R","Redes de Computadoras","N/A");
-        SubjectExpedient note4 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
-        SubjectExpedient note5 = new SubjectExpedient("A","Analisis Numerico","N/A");
-        SubjectExpedient note6 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
-        SubjectExpedient note7 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
-        SubjectExpedient note8 = new SubjectExpedient("A","Analisis de Sistemas","N/A");
-        SubjectExpedient note9 = new SubjectExpedient("R","Redes de Computadoras","N/A");
-        SubjectExpedient note10 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
+        SubjectExpedient note2 = new SubjectExpedient("A","Análisis de sistemas","N/A");
+        SubjectExpedient note3 = new SubjectExpedient("P","Probabilidad y Estadística","N/A");
+        SubjectExpedient note4 = new SubjectExpedient("P","Programación de Dispositivos Móviles","N/A");
+        SubjectExpedient note5 = new SubjectExpedient("A","Analisis Numérico","N/A");
 
-        gradesList = new ArrayList<SubjectExpedient>();
+        gradesList = new ArrayList<>();
         gradesList.add(note1);
         gradesList.add(note2);
         gradesList.add(note3);
         gradesList.add(note4);
         gradesList.add(note5);
-        gradesList.add(note6);
-        gradesList.add(note7);
-        gradesList.add(note8);
-        gradesList.add(note9);
-        gradesList.add(note10);
     }
 
     private void setNewList() {
         gradesList.clear();
-        //SubjectExpedient note1 = new SubjectExpedient("Programacion de Dispositivos Moviles","P","Primera Evaluación Parcial","19/04/18 - %15","N/A");
-        //SubjectExpedient note2 = new SubjectExpedient("Analisis de Sistemas","A","Primera Evaluación Parcial","19/04/18 - %15","N/A");
         Log.d("GradesFragment", "setNewList: Updating");
         SubjectExpedient note1 = new SubjectExpedient("A","Analisis de Sistemas","N/A");
         SubjectExpedient note2 = new SubjectExpedient("R","Redes de Computadoras","N/A");
         SubjectExpedient note3 = new SubjectExpedient("P","Redes de Computadoras","N/A");
         SubjectExpedient note4 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
-        SubjectExpedient note5 = new SubjectExpedient("A","Analisis Numerico","N/A");
-        SubjectExpedient note6 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
-        SubjectExpedient note7 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
-        SubjectExpedient note8 = new SubjectExpedient("A","Analisis de Sistemas","N/A");
-        SubjectExpedient note9 = new SubjectExpedient("R","Redes de Computadoras","N/A");
-        SubjectExpedient note10 = new SubjectExpedient("P","Programacion de Dispositivos Moviles","N/A");
         gradesList = new ArrayList<SubjectExpedient>();
         gradesList.add(note1);
         gradesList.add(note2);
         gradesList.add(note3);
         gradesList.add(note4);
-        gradesList.add(note5);
-        gradesList.add(note6);
-        gradesList.add(note7);
-        gradesList.add(note8);
-        gradesList.add(note9);
-        gradesList.add(note10);
         gradesAdapter.setList(gradesList);
         gradesAdapter.notifyDataSetChanged();
     }
@@ -152,8 +126,6 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
 
         Bundle bundle = new Bundle(); //procesa la info que se enviara a traves del intent
         bundle.putString("SUBJECT", subject + "-" +  gradesList.get(position).getGrade());
-
-        //header.setVisibility(View.VISIBLE);
 
         if (getResources().getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE)) {
 
@@ -167,22 +139,12 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemSelect
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
             fragmentTransaction.replace(R.id.detail_content, frag);
-            //fragmentTransaction.addToBackStack("option");
             fragmentTransaction.commit();
-        }else {
+        } else {
             Log.d("GradesFragment", "Subject" + subject);
-            Intent newIntent = new Intent(getActivity().getApplicationContext(), SubjectGradesDetailActivity.class);
+            Intent newIntent = new Intent(getActivity(), SubjectGradesDetailActivity.class);
             newIntent.putExtras(bundle);
             startActivity(newIntent);
         }
-        /*SubjectGradesDetailActivity frag = new SubjectGradesDetailActivity();
-        frag.setArguments(bundle);
-
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        fragmentTransaction.add(R.id.main_content, frag);
-        fragmentTransaction.addToBackStack("option");
-        fragmentTransaction.commit();*/
     }
 }

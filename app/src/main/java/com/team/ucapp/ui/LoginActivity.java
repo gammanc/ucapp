@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -70,10 +71,10 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<String> call, Response<String> response) {
                         if (response.isSuccessful()) {
                             String[] data = response.body().split(":");
-                            if (data[0].equals("token")) {
+                            if (data[0].equals("api_key")) {
                                 SharedPreference.logInUser(user, data[1]);
 
-                                btnLogin1.doneLoadingAnimation(Color.parseColor("#6200ea")
+                                btnLogin1.doneLoadingAnimation(Color.parseColor("#FF9100")
                                         , BitmapFactory.decodeResource(getResources(), R.drawable.ic_done_white_48dp));
                                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(i);
@@ -103,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onFailure(Call<String> call, Throwable t) {
                         t.printStackTrace();
                         btnLogin1.revertAnimation();
+                        Log.d("LoginActivity", "onFailure: "+t.getMessage());
                         Snackbar.make(v,
                                 getResources().getString(R.string.e_login_failed),
                                 Snackbar.LENGTH_LONG).show();

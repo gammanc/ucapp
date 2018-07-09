@@ -21,13 +21,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EvaluationListFragment extends Fragment {
-    Activity activity;
+
     SubjectGradesDetailAdapter adapter;
     RecyclerView evaluationListView;
     LinearLayoutManager lManager;
     List<SubjectGrades> evaluationList;
     String subject;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,9 +39,8 @@ public class EvaluationListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_evaluation_list, container, false);
 
-        evaluationListView = (RecyclerView) view.findViewById(R.id.evaluation_list);
+        evaluationListView = view.findViewById(R.id.evaluation_list);
         evaluationListView.setHasFixedSize(true);
-
 
         //aqui tendria que llamarse la tabla que contiene las notes
         if(subject.equals("Redes de Computadoras")) setList();
@@ -52,7 +50,7 @@ public class EvaluationListFragment extends Fragment {
         adapter = new SubjectGradesDetailAdapter(getContext(),evaluationList);
         Log.d("GradesFragment", "Creo adapter ");
         evaluationListView.setAdapter(adapter); //se le asigna al recycler lo que procesa el adapter de la informacion
-        lManager = new LinearLayoutManager(container.getContext());
+        lManager = new LinearLayoutManager(getContext());
         evaluationListView.setLayoutManager(lManager);
 
         return view;

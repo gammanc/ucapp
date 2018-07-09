@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * */
 public class NetworkUtils {
     private static Retrofit retrofit;
-    private static String BASE_URL = "http://gamenewsuca.herokuapp.com";
+    private static String BASE_URL = "https://ucappp.herokuapp.com";
     private static DataService dataService;
 
     public static DataService getClientInstance(Gson gson){

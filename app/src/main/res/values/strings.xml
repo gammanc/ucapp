@@ -26,6 +26,8 @@
     <string name="total_grade">Total grade</string>
     <string name="personal">Personal</string>
     <string name="university">University</string>
+    <string name="see_more">See more</string>
+    <string name="solvency_status">Solvency status</string>
 
     <!--Dropdown list-->
     <string-array name="semester_options_array">

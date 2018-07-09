@@ -1,29 +1,33 @@
 <resources>
     <string name="app_name">UCA</string>
-
     <!--Login-->
-    <string name="log_in">Entrar</string>
+    <string name="log_in">Ingresar</string>
     <string name="user">Usuario</string>
     <string name="password">Contraseña</string>
-    <string name="logout">Cerrar Sesión</string>
-
+    <string name="e_user_required">El usuario es requerido</string>
+    <string name="e_pass_required">La contraseña es requierida</string>
+    <string name="e_login_failed">Hubo un error al acceder. Por favor intenta mas tarde.</string>
+    <string name="logout">Cerrar sesión</string>
 
     <string name="menu">Menu</string>
-    <string name="home">Principal</string>
+    <string name="home">Inicio</string>
     <string name="grades">Notas</string>
     <string name="schedule">Horario</string>
     <string name="expedient">Expediente</string>
     <string name="solvency">Solvencias</string>
     <string name="calendar">Calendario</string>
     <string name="settings">Configuración</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="total_grade">Nota Total</string>
+    <string name="action_settings">Configuración</string>
+    <string name="cover_image">Cover Image</string>
+    <string name="no_title_available">Sin título disponible</string>
+    <string name="no_description_available">Sin descripción disponible</string>
+    <string name="total_grade">Nota total</string>
     <string name="personal">Personal</string>
     <string name="university">Universidad</string>
+    <string name="see_more">Ver más</string>
+    <string name="solvency_status">Ver estado de solvencia</string>
 
     <!--Dropdown list-->
     <string-array name="semester_options_array">
