@@ -1,6 +1,8 @@
 package com.team.ucapp.ui.grades;
 
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -20,9 +22,10 @@ import java.util.List;
 public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.GradesAdapterViewHolder> {
     Context context;
     List<SubjectExpedient> subjectsExpedientDetail;
+    Resources resources;
 
     public interface GradesAdapterListener{
-        public void onSubjectSelected(String subject);
+        public void onSubjectSelected(String subject, int position);
     }
 
     private GradesAdapterListener mListener;
@@ -33,8 +36,9 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.GradesAdap
         return (new GradesAdapterViewHolder(view));
     }
 
-    public GradesAdapter(Fragment fragment, List<SubjectExpedient> subjectsExpedientDetail) {
+    public GradesAdapter(Fragment fragment,Resources resources, List<SubjectExpedient> subjectsExpedientDetail) {
         this.context = fragment.getContext();
+        this.resources = resources;
         this.subjectsExpedientDetail = subjectsExpedientDetail;
         mListener = (GradesAdapterListener) fragment;
     }
@@ -49,11 +53,11 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.GradesAdap
         Log.d("GradesAdapter", "bindviewholder");
         holder.subjectLetter.setText(subjectsExpedientDetail.get(position).getSubjectLetter());
         holder.subject.setText(subjectsExpedientDetail.get(position).getSubject());
-        holder.grade.setText(subjectsExpedientDetail.get(position).getGrade());
+        if ( !(resources.getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE))) holder.grade.setText(subjectsExpedientDetail.get(position).getGrade());
         holder.subjectItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onSubjectSelected(subjectsExpedientDetail.get(position).getSubject());
+                mListener.onSubjectSelected(subjectsExpedientDetail.get(position).getSubject(), position);
             }
         });
     }

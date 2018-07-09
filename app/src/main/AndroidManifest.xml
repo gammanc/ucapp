@@ -24,6 +24,7 @@
         </activity>
         <activity
             android:name=".ui.grades.SubjectGradesDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName="ui.MainActivity">
             <!--Soporte para Android 4.0 para definir parent activity-->
             <meta-data
