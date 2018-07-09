@@ -1,26 +1,22 @@
 package com.team.ucapp.ui;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.team.ucapp.R;
 import com.team.ucapp.ui.expedient.ExpedientFragment;
 import com.team.ucapp.ui.grades.GradesFragment;
 import com.team.ucapp.ui.home.HomeFragment;
+import com.team.ucapp.ui.calendar.CalendarFragment;
 
 /**
  * Activity Principal
@@ -118,6 +114,8 @@ public class MainActivity extends AppCompatActivity
                 while (fragmentManager.popBackStackImmediate()); //clear the backstack
                 break;
             case R.id.item_calendar:
+                selectedFragment = new CalendarFragment();
+                tag = "calendar";
                 break;
             case R.id.item_expedient:
                 selectedFragment = new ExpedientFragment();

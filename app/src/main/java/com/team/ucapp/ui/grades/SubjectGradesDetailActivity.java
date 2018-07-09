@@ -44,7 +44,7 @@ public class SubjectGradesDetailActivity extends AppCompatActivity {
         Log.d("SubjectDEtail", "se obtuvo string:" + subject);
         grade= gradesDetail.split("-")[1];
 
-        //txtGrade.setText(grade);
+        txtGrade.setText(grade);
 
        EvaluationListFragment frag = new EvaluationListFragment();
         frag.setArguments(bundle);

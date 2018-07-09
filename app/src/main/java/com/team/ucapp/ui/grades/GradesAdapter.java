@@ -50,7 +50,7 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.GradesAdap
 
     @Override
     public void onBindViewHolder(@NonNull GradesAdapterViewHolder holder, int position) {
-        Log.d("GradesAdapter", "bindviewholder");
+        Log.d("CalendarAdapter", "bindviewholder");
         holder.subjectLetter.setText(subjectsExpedientDetail.get(position).getSubjectLetter());
         holder.subject.setText(subjectsExpedientDetail.get(position).getSubject());
         if ( !(resources.getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE))) holder.grade.setText(subjectsExpedientDetail.get(position).getGrade());
