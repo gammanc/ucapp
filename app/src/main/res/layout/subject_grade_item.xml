@@ -25,8 +25,10 @@
 
             <TextView
                 android:id="@+id/txt_subject"
-                android:layout_toRightOf="@+id/txt_subject_letter"
-                android:layout_toEndOf="@+id/txt_subject_letter"
+                android:layout_toRightOf="@id/txt_subject_letter"
+                android:layout_toEndOf="@id/txt_subject_letter"
+                android:layout_toStartOf="@id/txt_grade"
+                android:layout_toLeftOf="@id/txt_grade"
                 android:layout_marginTop="@dimen/item_sl_padding_y"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

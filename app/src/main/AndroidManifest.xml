@@ -36,6 +36,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ui.MainActivity" />
         </activity>
+        <activity
+            android:name=".ui.calendar.CalendarEventActivity" />
     </application>
 
 </manifest>

@@ -57,11 +57,11 @@ public class SubjectGradesDetailActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_settings, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

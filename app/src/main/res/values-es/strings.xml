@@ -30,6 +30,9 @@
     <string name="university">Universidad</string>
     <string name="see_more">Ver más</string>
     <string name="solvency_status">Ver estado de solvencia</string>
+    <string name="date_format_short">d/M/yy</string>
+    <string name="add_a_description">Agrega un descripción</string>
+    <string name="title">Título</string>
 
     <!--Dropdown list-->
     <string-array name="semester_options_array">
