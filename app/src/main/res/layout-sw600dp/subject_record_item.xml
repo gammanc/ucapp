@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/item_padding_y">
+    <LinearLayout
+        android:id="@+id/initial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/item_padding_x"
+        android:paddingRight="@dimen/item_padding_x"
+        android:orientation="vertical">
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txt_subject_letter"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle_shape"
+            app:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:text="S"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_toRightOf="@id/initial"
+        android:layout_toEndOf="@id/initial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Subject"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txt_subject_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Matrícula #"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txt_subject_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Subject status"
+            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#00A6FF" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:paddingLeft="@dimen/item_padding_x"
+        android:paddingRight="@dimen/item_padding_x"
+        android:layout_marginLeft="@dimen/item_padding_x"
+        android:layout_marginRight="@dimen/item_padding_x"
+        android:background="@drawable/rectangular_shape"
+        android:gravity="center"
+        android:text="N/A"
+        android:textStyle="bold"
+        android:textColor="@android:color/white" />
+
+    <View
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dedfe0" />
+</RelativeLayout>
