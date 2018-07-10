@@ -19,6 +19,7 @@
     <string name="solvency">Solvencias</string>
     <string name="calendar">Calendario</string>
     <string name="settings">Configuración</string>
+    <string name="calendar_event">Agregar evento</string>
 
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Configuración</string>
