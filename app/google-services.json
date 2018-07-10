@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "904269127332",
+    "firebase_url": "https://ucappucapp.firebaseio.com",
+    "project_id": "ucappucapp",
+    "storage_bucket": "ucappucapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904269127332:android:7057d93d356e96df",
+        "android_client_info": {
+          "package_name": "com.team.ucapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904269127332-3n4u5h4abdrodtse8oih8i8gap953n83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMobxirdf2gbbW5sUU_GdDZGR0GYDzJOs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
