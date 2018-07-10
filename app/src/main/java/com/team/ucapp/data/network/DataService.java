@@ -1,5 +1,7 @@
 package com.team.ucapp.data.network;
 
+import com.team.ucapp.data.database.Event;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -19,4 +21,7 @@ public interface DataService {
     @FormUrlEncoded
     @POST("/login")
     Call<String> login(@Field("carnet") String user, @Field("password")String password);
+
+    @GET("/events")
+    Call<ArrayList<Event>> getEvents();
 }

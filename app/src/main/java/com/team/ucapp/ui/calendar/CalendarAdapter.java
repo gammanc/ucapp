@@ -12,12 +12,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.team.ucapp.R;
+import com.team.ucapp.data.database.Event;
 
 import java.util.List;
 
 public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.CalendarAdapterViewHolder> {
     Context context;
-    List<EventDummy> events;
+    List<Event> events;
     Resources resources;
 
     @NonNull
@@ -35,12 +36,12 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
         holder.description.setText(events.get(position).getDescription());
     }
 
-    public CalendarAdapter(Fragment fragment,List<EventDummy> events) {
+    public CalendarAdapter(Fragment fragment,List<Event> events) {
         this.context = fragment.getContext();
         this.events = events;
     }
 
-    public void setList(List<EventDummy> newList) {
+    public void setList(List<Event> newList) {
         this.events = newList;
         notifyDataSetChanged();
     }

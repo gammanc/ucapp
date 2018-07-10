@@ -7,6 +7,8 @@
     <string name="e_user_required">El usuario es requerido</string>
     <string name="e_pass_required">La contraseña es requierida</string>
     <string name="e_login_failed">Hubo un error al acceder. Por favor intenta mas tarde.</string>
+    <string name="e_connection">No se ha podido conectar a internet.</string>
+    <string name="e_net_failure">No se ha podido conectar a internet.</string>
     <string name="logout">Cerrar sesión</string>
 
     <string name="menu">Menu</string>
