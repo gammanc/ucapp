@@ -21,4 +21,15 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <!--Dropdown list-->
+    <string-array name="semester_options_array">
+        <item>Ciclo 01/16</item>
+        <item>Ciclo 02/16</item>
+        <item>Ciclo 03/16</item>
+        <item>Ciclo 01/17</item>
+        <item>Ciclo 02/17</item>
+        <item>Ciclo 03/17</item>
+        <item>Ciclo 01/18</item>
+    </string-array>
 </resources>

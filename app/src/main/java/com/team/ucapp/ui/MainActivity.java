@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.team.ucapp.R;
 import com.team.ucapp.ui.expedient.ExpedientFragment;
+import com.team.ucapp.ui.grades.GradesFragment;
 import com.team.ucapp.ui.home.HomeFragment;
 
 /**
@@ -123,6 +124,8 @@ public class MainActivity extends AppCompatActivity
                 tag = "option";
                 break;
             case R.id.item_grades:
+                selectedFragment = new GradesFragment();
+                tag = "grades";
                 break;
         }
         if (selectedFragment!=null){
@@ -175,7 +178,7 @@ public class MainActivity extends AppCompatActivity
         if (fragmentManager.getBackStackEntryCount() > 0) {
             super.onBackPressed();
             while (fragmentManager.popBackStackImmediate()); //limpiando el backstack
-            bottomnavigationView.getMenu().getItem(0).setChecked(true);
+            bottomnavigationView.setSelectedItemId(R.id.item_home);
         }
         // Si ya no hay contenido, o la pantalla inicio está activa, se cierra la aplicación
         else if (contentFragment instanceof HomeFragment ||
@@ -183,4 +186,8 @@ public class MainActivity extends AppCompatActivity
             finish();
         }
     }
+
+   /* public void setTitle(int resource){
+        getSupportActionBar().setTitle(getResources().getString(resource));
+    }*/
 }
